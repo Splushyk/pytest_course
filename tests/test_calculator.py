@@ -20,3 +20,8 @@ def test_divide_by_zero_raises_value_error_with_message():
 
     # Проверяем, что текст ошибки содержит нужную фразу
     assert "Нельзя делить на ноль" in str(excinfo.value)
+
+def test_very_slow_calculation():
+    """Гипотетический тест, который работает очень долго."""
+    # для примера просто сделаем его успешным
+    assert True
