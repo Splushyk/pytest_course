@@ -1,3 +1,4 @@
+import sys
 import pytest
 from src.calculator import add, divide
 
@@ -30,3 +31,21 @@ def test_very_slow_calculation():
     """Гипотетический тест, который работает очень долго."""
     # для примера просто сделаем его успешным
     assert True
+
+
+@pytest.mark.skip(reason="Эта функциональность будет реализована в версии 2.0")
+def test_subtraction():
+    """Тест для будущей функции вычитания."""
+    # assert subtract(10, 5) == 5
+    pass
+
+
+@pytest.mark.skipif(sys.version_info < (3, 10), reason="Требуется Python 3.10 или выше")
+def test_new_python_feature():
+    """Тест, использующий синтаксис, доступный только в новых версиях Python."""
+    # Пример использования match-case, который появился в 3.10
+    result = 0
+    match 1:
+        case 1:
+            result = 1
+    assert result == 1
