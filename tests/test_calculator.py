@@ -14,6 +14,7 @@ def test_add_raises_type_error_on_string_input():
 
 
 def test_divide_by_zero_raises_value_error_with_message():
+    """Тест деления на 0 с проверкой текста ошибки."""
     with pytest.raises(ValueError) as excinfo:
         divide(10, 0)
 
