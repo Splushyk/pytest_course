@@ -14,3 +14,8 @@ wheels/
 
 # uv
 .python-version
+
+# Pytest and coverage artifacts
+.coverage
+htmlcov/
+.pytest_cache/
