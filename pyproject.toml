@@ -10,3 +10,11 @@ dependencies = []
 dev = [
     "pytest>=9.0.2",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+markers = [
+    "smoke: Дымовые тесты для критического функционала",
+    "regression: Полный набор регрессионных тестов",
+    "slow: Медленные тесты (например, с доступом к сети)"
+]
