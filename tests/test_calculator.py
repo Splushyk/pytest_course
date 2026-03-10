@@ -96,20 +96,11 @@ def test_get_total_price(filled_cart):
 
 # Используем три аргумента: два для входа, один для ожидания
 @pytest.mark.parametrize("a, b, expected", [
-    # 1. Тест-кейс: Положительные числа
-    (1, 2, 3),
-
-    # 2. Тест-кейс: Отрицательные числа
-    (-5, -3, -8),
-
-    # 3. Тест-кейс: Смешанные знаки
-    (-10, 5, -5),
-
-    # 4. Тест-кейс: Сложение с нулем
-    (100, 0, 100),
-
-    # 5. Тест-кейс: Дробные числа (float)
-    (0.1, 0.2, 0.3)
+    pytest.param(1, 2, 3, id="positive_numbers"),
+    pytest.param(-5, -3, -8, id="negative_numbers"),
+    pytest.param(-10, 5, -5, id="mixed_signs"),
+    pytest.param(100, 0, 100, id="add_zero"),
+    pytest.param(0.1, 0.2, 0.3, id="floats")
 ])
 def test_add_parametrized(a, b, expected):
     """
